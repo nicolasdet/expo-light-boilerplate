@@ -3,13 +3,18 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import NewsDisplay from './components/NewsDisplay/NewsDisplay';
 import HeaderBar from './components/HeaderBar/HeaderBar';
 import NewsContextProvider from './store/news-context';
+import ModalContextProvider from './store/modal-context';
+import AddNewsForm from './components/AddNewsForm/AddNewsForm';
 
 function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NewsContextProvider>
-        <HeaderBar />
-        <NewsDisplay />
+        <ModalContextProvider>
+          <HeaderBar />
+          <NewsDisplay />
+          <AddNewsForm />
+        </ModalContextProvider>
       </NewsContextProvider>
     </SafeAreaView>
   );

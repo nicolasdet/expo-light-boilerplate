@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
   },
   DropDownOpen: {
     margin: 20,
-    backgroundColor: 'pink',
     flex: 1,
   },
   dropDownElementContainer: {
