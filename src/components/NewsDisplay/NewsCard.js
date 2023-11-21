@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import NewsElement from './NewsElement';
 
 const NewsCard = ({ category, date, text, title, images }) => {
-  console.log(images);
   return (
     <View style={styles.container}>
       <View style={styles.ElementsContainer}>

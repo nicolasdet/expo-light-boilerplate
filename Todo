@@ -1,0 +1,12 @@
+Retour sur le Test
+
+Todo dans l'ordre :
+
+- Somple filtrer date Asc/esc
+
+- fini de coder le dropDown et donc le filtre des événements par date et catégories
+- créer le formulaire pour ajouter un événement idéalement sur une nouvelle page. j'aurai donc aussi implémenté une navigation basique.
+- Écrit plus de tests
+- Refactorer le code afin de rendre les éléments plus réutilisable
+- Refactorer le design qui n'est vraiment pas au point..
+- vérifier l'accessibilité de mon code comme demandé

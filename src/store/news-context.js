@@ -1,9 +1,11 @@
 import { createContext, useReducer } from 'react';
 import news from '../news.json';
+import { SortArrayByDate } from '../utils/date';
 
 export const NewsContext = createContext({
   news: [],
   filterNewsByDate: () => {},
+  filterNewsByCategory: () => {},
   addNews: (id, category, date, text, title, image) => {},
 });
 
@@ -20,9 +22,16 @@ function NewsReducer(state, action) {
       };
       return [...state, newNews];
     case 'FILTER_NEWS_BY_DATE':
-      const filteredNews = state.filter((item) => item.date === action.payload);
-      return filteredNews;
-
+      const StateToUpdateByDate = SortArrayByDate([...state], action.payload);
+      return StateToUpdateByDate;
+    case 'FILTER_NEWS_BY_CATEGORY':
+      let StateToUpdateByCategory = [...news.news];
+      if (action.payload === 'all') {
+        return news.news;
+      }
+      return StateToUpdateByCategory.filter(
+        (item) => item.category === action.payload
+      );
     default:
       return state;
   }
@@ -31,8 +40,12 @@ function NewsReducer(state, action) {
 function NewsContextProvider({ children }) {
   const [NewsState, dispatch] = useReducer(NewsReducer, news.news);
 
-  const filterNewsByDate = (date) => {
-    dispatch({ type: 'FILTER_NEWS_BY_DATE', payload: date });
+  const filterNewsByDate = (filter = 'desc') => {
+    dispatch({ type: 'FILTER_NEWS_BY_DATE', payload: filter });
+  };
+
+  const filterNewsByCategory = (filter = 'all') => {
+    dispatch({ type: 'FILTER_NEWS_BY_CATEGORY', payload: filter });
   };
 
   const addNews = (id, category, date, text, title, image) => {
@@ -53,6 +66,7 @@ function NewsContextProvider({ children }) {
     news: NewsState,
     filterNewsByDate,
     addNews,
+    filterNewsByCategory,
   };
 
   return <NewsContext.Provider value={value}>{children}</NewsContext.Provider>;

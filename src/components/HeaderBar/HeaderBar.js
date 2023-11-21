@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet } from 'react-native';
-import HeaderFilter from './HeaderFilter';
 
 const HeaderBar = () => {
   return (
@@ -8,7 +7,6 @@ const HeaderBar = () => {
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Evenements Culturels à venir</Text>
         </View>
-        <HeaderFilter />
       </View>
     </View>
   );
@@ -27,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#C8C8C8',
     marginTop: 20,
     width: '60%',
-    height: 60,
+    height: 90,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
