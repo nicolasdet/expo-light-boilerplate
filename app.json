@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Light-Boilerplate",
-    "slug": "Light-Boilerplate",
+    "name": "test-pass-culutre",
+    "slug": "test-pass-culutre",
     "version": "1.0.0",
 	"entryPoint": "./index.js",
     "orientation": "portrait",
