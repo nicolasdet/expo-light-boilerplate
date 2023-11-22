@@ -4,16 +4,16 @@ export const ModalContext = createContext({
   AddNewsModalVisible: false,
 });
 
-const ModalContextProvider = ({ children }) => {
+function ModalContextProvider({ children }) {
   const [AddNewsModalVisible, setAddNewsModalVisible] = useState(false);
 
-  value = {
+  const value = {
     AddNewsModalVisible,
     setAddNewsModalVisible,
   };
   return (
     <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
   );
-};
+}
 
 export default ModalContextProvider;
