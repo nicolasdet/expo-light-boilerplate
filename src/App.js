@@ -4,7 +4,7 @@ import NewsDisplay from './components/NewsDisplay/NewsDisplay';
 import HeaderBar from './components/HeaderBar/HeaderBar';
 import NewsContextProvider from './store/news-context';
 import ModalContextProvider from './store/modal-context';
-import AddNewsForm from './components/AddNewsForm/AddNewsForm';
+import AddNewsModal from './components/AddNewsForm/AddNewsModal';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <ModalContextProvider>
           <HeaderBar />
           <NewsDisplay />
-          <AddNewsForm />
+          <AddNewsModal />
         </ModalContextProvider>
       </NewsContextProvider>
     </SafeAreaView>
